@@ -10,5 +10,4 @@ A collection of practical Artificial Intelligence projects, including machine le
 - Model evaluation and visualization
 - Deployment examples of AI models
 
-## Project Structure
 
