@@ -164,12 +164,64 @@ y = np.array([2,4,6])
 
 print("x =",x)
 print("y =",y)
-print("\n L1 norm of X:", np.lang.norm(x,1))
+print("\n L1 norm of X:", np.linalg.norm(x,1))
 print("\n L2 norm of x : ",np.linalg.norm(x,2))
-print("\n Infinity norm of x: ", np.lang.norm(x.np.inf))
+print("\n Infinity norm of x: ", np.linalg.norm(x,np.inf))
 
 is_orthogonal = np.isclose(np.dot(x,y),0)
 print("\n Are x and y orthogonal ", is_orthogonal)
+
+
+# ============================================================================
+#  MATRIX DECOMPOSITIONS (LU, QR, SVD)
+# ============================================================================
+print("\n=== MATRIX DECOMPOSITIONS ===")
+
+D = np.array([[2, 1],
+              [1, 2]])
+
+print("Matrix D:\n", D)
+
+# ➤ LU Decomposition (A = P·L·U)
+P, L, U = lu(D)
+print("\nLU Decomposition:")
+print("P =\n", P)
+print("L =\n", L)
+print("U =\n", U)
+
+# ➤ QR Decomposition (A = Q·R)
+Q, R = np.linalg.qr(D)
+print("\nQR Decomposition:")
+print("Q =\n", Q)
+print("R =\n", R)
+
+# ➤ Singular Value Decomposition (SVD)
+U_svd, S, Vt = np.linalg.svd(D)
+print("\nSVD Decomposition:")
+print("U =\n", U_svd)
+print("Singular values =", S)
+print("V^T =\n", Vt)
+
+# ➤ Verify reconstruction (A = UΣVᵀ)
+reconstructed = np.dot(U_svd, np.dot(np.diag(S), Vt))
+print("\nReconstructed Matrix D (from SVD):\n", reconstructed)
+
+
+#===============================================
+    #Solving linear system Ax=b
+#===============================================
+
+print("\n Soling linear equations to find  different values")
+
+A = np.array([[3,1],[1,2]])
+b = np.array([9,8])
+
+x_solution = np.linalg.solve(A,b)
+print("solution x = ", x_solution)
+
+#verify the solution 
+
+print("Verification (A-x):", np.dot(A,x_solution))
 
 
 
