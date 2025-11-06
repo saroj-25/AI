@@ -125,5 +125,33 @@ trace_M = np.trace(M)
 print("Trace of M: ", trace_M)
 
 
+#=================================================
+# Eigon values and eigon vectors 
+#=================================================
+
+print("\n Eigon values and eigon vectors\n")
+
+C = np.array([[4,2],[1,3]])
+
+
+#Eigon decomposition 
+
+eigen_values, eigen_vectors = np.linalg.eig(C)
+
+print("\n The matrix is \n", C)
+print("\n The eigen value is \n", eigen_values), 
+print("\n The Eigon vector is ",eigen_vectors)
+
+
+#Verify A-V = Lambda -V for each pair 
+
+for i in range(len(eigen_values)):
+    lhs = np.dot(C,eigen_vectors[:,i])
+    rhs = eigen_values[i] * eigen_vectors[:,i]
+    
+    print(f"\n Eigen pair {i+1}")
+    print("A-v =", lhs)
+    print("Lambda -v =", rhs)
+
 
 
