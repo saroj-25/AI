@@ -95,5 +95,35 @@ print("\n Transopose of A = \n", A.T)
 
 print("Matrix Properties")
 
+# Matrix properties like determinant, rank, trace and inverse 
+
+M = np.array([[2,1],[5,3]])
+print("Matrix M: \n",M)
+
+#Determinant non zero invertible 
+
+det_M = np.linalg.det(M)
+print("\n The determinant of M is \n", det_M)
+
+#Rank the number of independant rows or column 
+rank_M = np.linalg.matrix_rank(M)
+print("\n The rank of the matrix is \n", rank_M)
+
+
+#Inverse (Only if determanant not equal to 0)
+if det_M!=0:
+    inv_M = np.linalg.inv(M)
+    print("\n Inverse of M:",inv_M)
+    
+else: 
+    print("Matrix is singular no inverse")
+
+
+#Trace(Sum of diagonal element)
+
+trace_M = np.trace(M)
+print("Trace of M: ", trace_M)
+
+
 
 
