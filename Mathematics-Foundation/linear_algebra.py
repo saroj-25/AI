@@ -32,32 +32,68 @@ print("\nVector v1 : ", v1)
 print("\nVector 2:", v2)
 
 #Vector addition and subtraction 
-print("\n Addition operation",v1+v2)
-print("\n Subtraction operation", v1-v2)
+print("\n Addition operation \n",v1+v2)
+print("\n Subtraction operation \n", v1-v2)
 
 #scalar multiply 
 
-print("Scalar multiply for vector 2 with 3", 3*v1)
+print("\nScalar multiply for vector 2 with 3 \n", 3*v1)
 
 #dot product 
 dot_product = np.dot(v1,v2)
-print(f"The dot product of {v1} and {v2}: ", dot_product)
+print(f"\n The dot product of {v1} and {v2}: \n ", dot_product)
 
 #cross product 
 cross_product = np.cross(v1,v2)
-print(f"Cross product of {v1} and {v2}:", cross_product)
+print(f"\nCross product of {v1} and {v2}:\n", cross_product)
 
-#magnitude or Norm(length of a vector)
+#magnitude or Norm(length of a vector i.e magnitude)
 
 norm_v1 = np.linalg.norm(v1)
 print("\n Norm of v1 (||v1||)", norm_v1)
 
 unit_v1 = v1/norm_v1
-print("Unit vector of v1: ", unit_v1)
+print("\n Unit vector of v1: \n", unit_v1)
 
 
 #Angle between vectors 
 
 cos_theta = np.dot(v1,v2)/(np.linalg.norm(v1)* np.linalg.norm(v2))
 angle_deg = np.degrees(np.arccos(np.clip(cos_theta,-1,1)))
-print("\n Angle between v1 and v2:", round(angle_deg,2,"degrees"))
+# [-1,1 ] here clamp the value of cos theta between -1 and 1 
+print("\n Angle between v1 and v2: \n", round(angle_deg,2),"degrees")
+
+
+
+#Matrix creation and basic operations 
+
+print(" \n Matrix Operations \n ")
+
+#Define matrix i.e 2D Array 
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+B = np.array([[9,8,7],[6,5,4],[3,2,1]])
+
+print("\n Matrix A :", A)
+print("\n Matrix B :",B)
+
+print("\n Matrix Addition, subtraction, and scalar multiplication \n")
+print("\n A+B = \n", A+B)
+print("\n A-B = \n ",A-B )
+print("\n A*B = \n", np.cross(A,B)) # cross product of two matrices 
+print("\n 3*B = \n ",3*B )
+
+#Element wise multiplication 
+print("\n A*B = \n", A*B)
+
+#Transpose of matrix 
+print("\n Transopose of A = \n", A.T)
+
+#====================================
+         #MATRIX PROPERTIES 
+#====================================
+
+print("Matrix Properties")
+
+
+
