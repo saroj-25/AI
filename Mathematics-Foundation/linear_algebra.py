@@ -152,6 +152,24 @@ for i in range(len(eigen_values)):
     print(f"\n Eigen pair {i+1}")
     print("A-v =", lhs)
     print("Lambda -v =", rhs)
+    
+
+
+#Vector norms and orthogonality 
+x = np.array([1,2,3])
+y = np.array([2,4,6])
+
+
+#different norms 
+
+print("x =",x)
+print("y =",y)
+print("\n L1 norm of X:", np.lang.norm(x,1))
+print("\n L2 norm of x : ",np.linalg.norm(x,2))
+print("\n Infinity norm of x: ", np.lang.norm(x.np.inf))
+
+is_orthogonal = np.isclose(np.dot(x,y),0)
+print("\n Are x and y orthogonal ", is_orthogonal)
 
 
 
